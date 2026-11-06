@@ -358,6 +358,7 @@ body {
 }
 
 
+
 .sidebar {
   position: fixed;
   top: 0;
@@ -379,6 +380,7 @@ body {
   padding: 28px 15px;
   z-index: 1000;
 }
+
 
 
 .brand {
