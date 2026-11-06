@@ -299,6 +299,13 @@ app.use(express.static(
   path.join(__dirname, "public")
 ));
 
+
 app.listen(PORT, "0.0.0.0", () => {
   console.log(`SoftTrack running on port ${PORT}`);
+
+  console.log(
+    "APP_ORIGIN configured:",
+    Boolean(process.env.APP_ORIGIN)
+  );
 });
+
