@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+  <title>SoftTrack | Dashboard</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+
+  <!-- Mobile top bar -->
+  <div class="mobile-bar">
+    <button id="menuToggle" class="menu-toggle"
+            aria-label="Open navigation"
+            aria-expanded="false"
+            aria-controls="sidebar">☰</button>
+    <strong>SoftTrack</strong>
+  </div>
+
+  <div id="sidebarOverlay" class="sidebar-overlay"></div>
+
+  <!-- Navigation sidebar -->
+  <aside id="sidebar" class="sidebar">
+    <div class="brand">
+      <span class="brand-icon">◈</span>
+      <div>
+        <strong>SoftTrack</strong>
+        <small>Software Management</small>
+      </div>
+    </div>
+
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#dashboard" class="nav-link active"
+         data-page="dashboard">
+        <span class="nav-icon">▦</span>
+        Dashboard
+      </a>
+
+      <a href="#inventory" class="nav-link"
+         data-page="inventory">
+        <span class="nav-icon">▣</span>
+        Software Inventory
+      </a>
+
+  
+
+    </nav>
+
+    <div class="sidebar-footer">
+      <span class="online-dot"></span>
+      System Online
+      <small>SoftTrack Version 2</small>
+    </div>
+  </aside>
+
+  <!-- Main content -->
+  <div class="app-shell">
+    <header class="topbar">
+      <div>
+        <span class="eyebrow">SOFTWARE MANAGEMENT</span>
+        <h1>Dashboard</h1>
+        <p>Manage software versions and approvals.</p>
+      </div>
+     
+        <div class="topbar-actions">
+        <span class="topbar-badge">● Local Inventory</span>
+
+        <button
+            id="themeToggle"
+            class="theme-toggle"
+            type="button"
+            aria-label="Switch to dark mode"
+            aria-pressed="false">
+            <span id="themeIcon" aria-hidden="true">🌙</span>
+            <span id="themeLabel">Dark Mode</span>
+        </button>
+        </div>
+
+    </header>
+
+    <main class="container">
+      <section id="dashboard" class="dashboard">
+        <div class="card">
+          <h2 id="softwareCount">0</h2>
+          <p>Software Titles</p>
+        </div>
+        <div class="card approved">
+          <h2 id="approvedCount">0</h2>
+          <p>Approved Versions</p>
+        </div>
+        <div class="card pending">
+          <h2 id="pendingCount">0</h2>
+          <p>Pending Reviews</p>
+        </div>
+        <div class="card denied">
+          <h2 id="deniedCount">0</h2>
+          <p>Denied Versions</p>
+        </div>
+      </section>
+
+      
+
+      <section id="inventory" class="panel">
+        <div class="panel-heading inventory-heading">
+          <span class="panel-icon">▣</span>
+          <div>
+            <h2>Software Inventory</h2>
+            <p class="help-text">
+              Browse and manage approved software versions.
+            </p>
+          </div>
+          <button id="exportBtn" type="button"
+                  class="export-btn">Export CSV</button>
+        </div>
+
+        <div class="filters">
+          <input id="search" type="search"
+                 placeholder="Search software, publisher or version">
+
+          <select id="statusFilter">
+            <option value="All">All Statuses</option>
+            <option value="Approved">Approved</option>
+            <option value="Pending">Pending Approval</option>
+            <option value="Denied">Denied</option>
+          </select>
+        </div>
+
+        <div id="softwareList"></div>
+        <p id="emptyMessage" hidden>
+          No software found. Add your first version above!
+        </p>
+      </section>
+    </main>
+  </div>
+
+  <script src="/navigation.js"></script>
+
+  </script>
+</body>
+</html>
